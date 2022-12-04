@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
+  "keywords": ["hardhat", "ethereum", "nfts"],
+  "author": "Bruno Garcia",
   "license": "ISC",
+  "scripts": {
+    "test": "hardhat test",
+    "run": "hardhat run scripts/run.ts"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
@@ -16,8 +20,5 @@
     "chai": "^4.3.7",
     "ethers": "^5.7.2",
     "hardhat": "^2.12.3"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^4.8.0"
   }
 }
