@@ -36,7 +36,8 @@ contract MyEpicNFT is ERC721 {
 
   // Set the NFT's metadata
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
-    require(_exists(_tokenId));
+    require(_exists(_tokenId), "ERC721Metadata: URI query for nonexistent token");
+
     console.log("An NFT w/ ID %s has been minted to %s", _tokenId, msg.sender);
     // JSON url
     // return "https://www.jsonkeeper.com/b/T6PO";
