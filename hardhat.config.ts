@@ -1,8 +1,12 @@
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
+require("dotenv").config();
+require("@nomicfoundation/hardhat-toolbox");
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.17",
+module.exports = {
+  solidity: '0.8.17',
+  networks: {
+    goerli: {
+      url: process.env.QUICKNODE_API_KEY_URL, // Infrastructure provider
+      accounts: [process.env.GOERLI_PRIVATE_KEY], // Ethereum test network 
+    },
+  },
 };
-
-export default config;

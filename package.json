@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "keywords": ["hardhat", "ethereum", "nfts"],
+  "keywords": [
+    "hardhat",
+    "ethereum",
+    "nfts"
+  ],
   "author": "Bruno Garcia",
   "license": "ISC",
   "scripts": {
-    "test": "hardhat test",
-    "run": "hardhat run scripts/run.ts"
+    "hh:test": "hardhat test",
+    "hh:run": "hardhat run scripts/run.ts",
+    "hh:deploy": "npx hardhat run scripts/deploy.ts --network goerli"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.0"
+    "@openzeppelin/contracts": "^4.8.0",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
