@@ -5,14 +5,22 @@
 Programmatically generate your own NFT collection, write + deploy a smart contract in Solidity, 
 and build your own React dApp to let friends connect their wallets and interact w/ your NFTs.
 
+## Getting Started
+
+- 🔔 Rename the file `.env.example` to `.env.local`. And then add your own Quicknode API key and the Goerli testnet private key.
+
+- 💳 You should have a installed a wallet like [Metamask](https://metamask.io/) and have some testnet ETH in it.
+
 ## Development
 
-Try running some of the following tasks:
+Run the contract on a local blockchain
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+```bash
+npm run hh:run
+```
+
+Deploy the contract on the [Goerli testnet](https://goerli.net/)
+
+```bash
+npm run hh:deploy
 ```
