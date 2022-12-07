@@ -1,9 +1,14 @@
 # Smart Contracts
 
-[Mint your own NFT](https://buildspace.so/p/mint-nft-collection) collection and ship a Web3 app to show them off.
+### [Mint your own NFT](https://buildspace.so/p/mint-nft-collection)
 
 Programmatically generate your own NFT collection, write + deploy a smart contract in Solidity, 
 and build your own React dApp to let friends connect their wallets and interact w/ your NFTs.
+
+### [Build Solidity DApp](https://buildspace.so/p/build-solidity-web3-app)
+
+Weekend build where you'll learn some Solidity, write + deploy a smart contract to the blockchain, and build a Web3 client app to interact with your contract. Perfect for hackers curious about crypto.
+
 
 ## Getting Started
 
