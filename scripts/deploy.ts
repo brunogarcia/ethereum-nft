@@ -1,16 +1,17 @@
-import { ethers } from "hardhat";
+import hre from "hardhat";
 
 const main = async () => {
-  const nftContractFactory = await ethers.getContractFactory('MyEpicNFTList');
-  const nftContract = await nftContractFactory.deploy();
-  await nftContract.deployed();
-  console.log("Contract deployed to:", nftContract.address);
+  const [deployer] = await hre.ethers.getSigners();
+  const accountBalance = await deployer.getBalance();
 
-  // Call the function.
-  let txn = await nftContract.makeAnEpicNFTList()
-  // Wait for it to be mined.
-  await txn.wait()
-  console.log("Minted NFT")
+  console.log("Deploying contracts with account: ", deployer.address);
+  console.log("Account balance: ", accountBalance.toString());
+
+  const waveContractFactory = await hre.ethers.getContractFactory("WavePortal");
+  const waveContract = await waveContractFactory.deploy();
+  await waveContract.deployed();
+
+  console.log("WavePortal address: ", waveContract.address);
 };
 
 const runMain = async () => {
@@ -23,4 +24,4 @@ const runMain = async () => {
   }
 };
 
-runMain()
+runMain();

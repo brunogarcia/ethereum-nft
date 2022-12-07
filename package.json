@@ -1,5 +1,5 @@
 {
-  "name": "epic-nfts",
+  "name": "smart-contracts-eth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,12 @@
   "author": "Bruno Garcia",
   "license": "ISC",
   "scripts": {
-    "hh:test": "hardhat test",
-    "hh:run": "hardhat run scripts/run.ts",
-    "hh:deploy": "npx hardhat run scripts/deploy.ts --network goerli"
+    "node": "npx hardhat node",
+    "test": "npx hardhat test",
+    "compile": "npx hardhat compile",
+    "dev": "npx hardhat run scripts/dev.ts",
+    "deploy:local": "npx hardhat run scripts/deploy.ts --network localhost",
+    "deploy:goerli": "npx hardhat run scripts/deploy.ts --network goerli"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.8.0",
