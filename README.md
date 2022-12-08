@@ -61,6 +61,8 @@ It's run by compute power from machines who want to support the network. Usually
 
 ### Smart contract
 
+> A Contract is an abstraction which represents a connection to a specific contract on the Ethereum Network, so that applications can use it like a normal JavaScript object.	
+
 Similar to server's code with different functions people can hit.
 
 Remember, the blockchain has no owner. It's just a bunch of computers around the world run by miners that have a copy of the blockchain.
@@ -128,11 +130,51 @@ In order to get fake ETH, we have to ask the network for some. This fake ETH wil
 
 Make sure that your [MetaMask wallet](https://metamask.io) is set to the "Goerli Test Network" before using faucet.
 
-You'll need your **private Goerli key** (not your public address!) which you can grab from Metamask and paste that in there as well.
+### Goerli private key
 
 > Accessing your private key can be done by opening MetaMask, change the network to "Goerli Test Network" and then click the three dots and select "Account Details" > "Export Private Key"
 
 Why do you need to use your private key?
+
 Because in order to perform a transaction like deploying a contract, you need to "login" to the blockchain.
+
 And, your username is your public address and your password is your private key.
 It's kinda like logging into AWS or GCP to deploy.
+
+### ethers.js
+
+The ethers.js library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem.
+
+It was originally designed for use with ethers.io and has since expanded into a more general-purpose library.
+
+[https://docs.ethers.io/](https://docs.ethers.io/)
+
+### Provider
+
+It is what we use to actually talk to Ethereum nodes. 
+It provides read-only access to the Blockchain and its status.
+
+Remember how we were using QuickNode to deploy?
+Well in this case we use nodes that Metamask provides in the background to send/receive data from our deployed contract.
+
+### Signers
+
+A Signer in ethers is an abstraction of an Ethereum Account, which can be used to sign messages and transactions and send signed transactions to the Ethereum Network to execute state changing operations.
+
+### Contract Application Binary Interface (ABI)
+
+When you compile your smart contract, the compiler spits out a bunch of files needed that lets you interact with the contract. You can find these files in the artifacts folder located in the root of your Solidity project.
+
+The ABI file is something our web app needs to know how to communicate with our contract.
+
+[https://docs.soliditylang.org/en/v0.8.17/abi-spec.html](https://docs.soliditylang.org/en/v0.8.17/abi-spec.html)
+
+### Gas and fees
+
+Gas is essential to the Ethereum network. It is the fuel that allows it to operate, in the same way that a car needs gasoline to run.
+
+Gas refers to the unit that measures the amount of computational effort required to execute specific operations on the Ethereum network.
+
+Since each Ethereum transaction requires computational resources to execute, each transaction requires a fee. Gas refers to the fee required to conduct a transaction on Ethereum successfully.
+
+[https://ethereum.org/en/developers/docs/gas/](https://ethereum.org/en/developers/docs/gas/)
