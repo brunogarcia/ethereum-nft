@@ -41,8 +41,8 @@ const main = async () => {
   console.log("Contract deployed by:", owner.address);
 
   /*
-    * Get contract balance
-    */
+   * Get contract balance
+   */
   let contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
   console.log(
     "Contract balance:",
@@ -50,22 +50,25 @@ const main = async () => {
   );
 
   /*
-  * Send wave
-  */
-  let waveTxn = await waveContract.wave("Hi Eva!");
+   * Let's try two waves now
+   */
+  const waveTxn = await waveContract.wave("This is wave #1");
   await waveTxn.wait();
 
+  const waveTxn2 = await waveContract.wave("This is wave #2");
+  await waveTxn2.wait();
+
   /*
-  * Get contract balance again to see what happened!
-  */
+   * Get contract balance again
+   */
   contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
   console.log(
-    "Contract balance:",
+    "Contract balance again:",
     hre.ethers.utils.formatEther(contractBalance)
   );
 
   let allWaves = await waveContract.getAllWaves();
-  console.log(allWaves);
+  console.log("All waves", allWaves);
 };
 
 const runMain = async () => {
